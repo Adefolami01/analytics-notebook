@@ -22,6 +22,7 @@ Applying the IQR method, values exceeding ₦174,000 (upper bound) or falling be
 The correlation between bonus and hours worked is 0.05 when the CEO is included — effectively no relationship. Excluding the CEO, however, the correlation rises to 0.99, indicating an almost perfect linear relationship. This shift occurs because the CEO's hours worked (40) are unremarkable, while their bonus (₦920,000) is extreme — this single point distorts the calculation for the full dataset, even though the remaining 24 employees show a near-perfect bonus-to-hours pattern.
 
 While this correlation is strong, correlation does not establish causation. It is unclear whether working more hours leads to a larger bonus, or whether staff in higher-paying roles are simply expected to work more hours. A likely confounding variable is seniority or role level — more experienced or senior staff may both work longer hours and receive larger bonuses independently, without either variable directly causing the other.
+![Summary stats — mean, median, IQR, and correlation](images/bonus-pay-stats.png)
 
 ## Recommendation
 
