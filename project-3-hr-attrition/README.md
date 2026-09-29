@@ -58,7 +58,7 @@ Attrition Rate = DIVIDE([Attrition Count], [Total Employees], 0)
 *(Add your actual Avg Cost Per Departure formula and any other measures here — this is often the most impressive section for recruiters, since it shows DAX fluency beyond basic SUM/COUNT.)*
 
 ## Dashboard Design
-
+https://github.com/user-attachments/assets/c5488733-d2c9-4a92-b3b3-504b5e267a20
 Layout follows core dashboard UX principles: a clear headline visual (Attrition Rate and Attrition Count sized prominently at the top), consistent alignment and grouping of related visuals, and deliberate whitespace so the report reads top-to-bottom without clutter. Sidebar slicers (Department, Overtime) let viewers filter the entire page interactively rather than reading static numbers.
 
 ## Dashboard Breakdown
