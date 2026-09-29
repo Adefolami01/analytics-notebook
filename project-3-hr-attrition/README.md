@@ -25,7 +25,7 @@ This project is the capstone of a self-directed Power BI learning phase, bringin
 ![Raw Dataset](raw-dataset.png)
 The data used is the **IBM HR Analytics Employee Attrition dataset**, sourced from Kaggle. It is a widely used, anonymized HR dataset containing employee-level records including demographics, job role, department, tenure, overtime status, and attrition outcome (whether the employee left the company).
 
-*(Add the direct Kaggle link here once you're ready to publish, e.g. `[Dataset link](https://www.kaggle.com/...)`.)*
+[Dataset link](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset)
 
 ## Data Cleaning & Transformation
 
@@ -80,7 +80,19 @@ Layout follows core dashboard UX principles: a clear headline visual (Attrition 
 
 ## Key Insight
 
-*(This is the most important section for readers — add 2-3 sentences here once you're looking at the dashboard again. For example: which department has the highest attrition rate, whether overtime employees leave more often, and which tenure band is most at risk. This is where you demonstrate the "so what" of the analysis, not just the numbers.)*
+
+
+**Attrition here isn't a company-wide problem — it's concentrated in the first two years of employment, and that concentration is what's driving the bulk of your cost.**
+
+Breaking down the numbers here
+- Of the 237 total departures, the **0-2 years tenure band accounts for roughly 102 of them** — that's about 43% of all attrition sitting in just the newest-hire segment, nearly double the next band (3-5 yrs, ~68) and comfortably ahead of 6+ yrs (~75, spread over a much longer tenure window)
+- At **$43.08K average cost per departure**, that early-tenure band alone represents somewhere around **$4.4M of your $10.21M total attrition cost** — meaning early-career exits, not veteran turnover, are the single biggest cost driver in the whole dataset
+
+**Why this matters analytically:** a company often assumes attrition is either random or concentrated among long-tenured "burnt out" staff.  The data says the opposite — people are leaving fastest right after being hired, when the company has *just* absorbed the full cost of recruiting and onboarding them and hasn't yet recouped that investment through their productive output. That's a fundamentally different (and more expensive) problem than veteran turnover, because you're paying the replacement cost repeatedly on people who barely got started.
+
+**The supporting layer:** Sales and R&D show the highest attrition counts by department, and this lines up with the OverTime split — people working overtime attrite at a meaningfully higher rate than those who don't. So the fuller story your dashboard tells is: **new hires in high-overtime departments (Sales, R&D) are leaving fast, and it's costing roughly $4M+ a year specifically because the company keeps re-paying onboarding costs on people who don't stay past year two.**
+
+That's the kind of finding that turns "here's an attrition dashboard" into "here's a specific, fixable retention problem" — 
 
 ## Tools Used
 
