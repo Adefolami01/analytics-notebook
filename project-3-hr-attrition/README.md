@@ -22,7 +22,7 @@ Employee attrition is one of the most expensive problems an organization can fac
 This project is the capstone of a self-directed Power BI learning phase, bringing together data transformation (Power Query), data modeling, DAX measures, and dashboard UX principles into a single end-to-end build — following on from an earlier SQL project analyzing e-commerce trends.
 
 ## Dataset
-
+![Raw Dataset](raw-dataset.png)
 The data used is the **IBM HR Analytics Employee Attrition dataset**, sourced from Kaggle. It is a widely used, anonymized HR dataset containing employee-level records including demographics, job role, department, tenure, overtime status, and attrition outcome (whether the employee left the company).
 
 *(Add the direct Kaggle link here once you're ready to publish, e.g. `[Dataset link](https://www.kaggle.com/...)`.)*
@@ -38,7 +38,7 @@ All transformation was done in **Power Query** before loading the data into the 
 *(Optional: paste your exact M code or column logic here for extra technical detail once you're back in the file.)*
 
 ## Data Modeling
-
+![Model View](model-view.png)
 The report uses a single-table model built directly from the cleaned dataset, with calculated columns (e.g. Tenure Band) added at the model layer to support grouping in visuals without needing separate lookup tables.
 
 *(If you used a star schema, multiple related tables, or Row-Level Security, add that detail here.)*
@@ -58,6 +58,7 @@ Attrition Rate = DIVIDE([Attrition Count], [Total Employees], 0)
 *(Add your actual Avg Cost Per Departure formula and any other measures here — this is often the most impressive section for recruiters, since it shows DAX fluency beyond basic SUM/COUNT.)*
 
 ## Dashboard Design
+![Dashboard Screenshot](dashboard-screenshot.png)
 https://github.com/user-attachments/assets/c5488733-d2c9-4a92-b3b3-504b5e267a20
 Layout follows core dashboard UX principles: a clear headline visual (Attrition Rate and Attrition Count sized prominently at the top), consistent alignment and grouping of related visuals, and deliberate whitespace so the report reads top-to-bottom without clutter. Sidebar slicers (Department, Overtime) let viewers filter the entire page interactively rather than reading static numbers.
 
