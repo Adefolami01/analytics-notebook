@@ -35,13 +35,12 @@ All transformation was done in **Power Query** before loading the data into the 
 - **Fixed data types** — corrected fields imported as text/general into their proper types (numeric, date, categorical) so aggregations and DAX calculations would evaluate correctly
 - **Created calculated columns**, including grouping raw tenure values into readable **Tenure Bands** used throughout the report, and deriving the fields needed to support the Department, Overtime, and Gender breakdowns
 
-*(Optional: paste your exact M code or column logic here for extra technical detail once you're back in the file.)*
+- **TenureBand = Table.AddColumn(#"Removed Columns", "TenureBand", each if [YearsAtCompany] <= 2 then "0-2yrs" else if [YearsAtCompany] <= 5 then "3-5yrs" else "6+yrs")**
 
 ## Data Modeling
 ![Model View](model-view.png)
 The report uses a single-table model built directly from the cleaned dataset, with calculated columns (e.g. Tenure Band) added at the model layer to support grouping in visuals without needing separate lookup tables.
 
-*(If you used a star schema, multiple related tables, or Row-Level Security, add that detail here.)*
 
 ## DAX Measures
 
@@ -54,8 +53,11 @@ Custom DAX measures power the core KPIs rather than relying on default column ag
 ```dax
 Attrition Rate = DIVIDE([Attrition Count], [Total Employees], 0)
 ```
-
-*(Add your actual Avg Cost Per Departure formula and any other measures here — this is often the most impressive section for recruiters, since it shows DAX fluency beyond basic SUM/COUNT.)*
+Avg Cost Per Departure = DIVIDE([Total Cost of Attrition], [Attrition Count])
+Total Cost of Attrition = SUMX(
+    FILTER('WA_Fn-UseC_-HR-Employee-Attrition', 'WA_Fn-UseC_-HR-Employee-Attrition'[Attrition] = "Yes"),
+    'WA_Fn-UseC_-HR-Employee-Attrition'[AnnualIncome] * 'WA_Fn-UseC_-HR-Employee-Attrition'[ReplacementCostMultiplier]
+)
 
 ## Dashboard Design
 ![Dashboard Screenshot](dashboard-screenshot.png)
@@ -107,4 +109,4 @@ The `.pbix` file is included in this repository. To explore it interactively:
 2. Open the `.pbix` file
 3. Use the Department and Overtime slicers on the left to explore attrition across segments
 
-*(A screen recording or GIF of the dashboard in action, embedded here, makes the project accessible to anyone without Power BI installed — worth adding if you get the chance. Note: Power BI Service publishing isn't required for this — GitHub + a recording is enough for a portfolio piece.)*
+
